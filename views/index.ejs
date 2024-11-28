@@ -1,0 +1,33 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>صفحه اصلی</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <span>خوش آمدید <%= username %></span>
+            <a href="/logout" class="logout-btn">خروج</a>
+        </div>
+    </nav>
+    <div class="products-container">
+        <h2>محصولات</h2>
+        <div class="products-grid">
+            <% products.forEach(function(product) { %>
+                <div class="product-card">
+                    <% if (product.image) { %>
+                        <img src="<%= product.image %>" alt="<%= product.name %>">
+                    <% } %>
+                    <h3><%= product.name %></h3>
+                    <p class="category"><%= product.category %> - <%= product.subcategory %></p>
+                    <p class="price"><%= product.price %> تومان</p>
+                    <p class="description"><%= product.description %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

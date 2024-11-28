@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ثبت‌نام</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>ثبت‌نام در سیستم</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">نام کاربری:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">ایمیل:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">رمز عبور:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">ثبت‌نام</button>
+        </form>
+        <p>قبلاً ثبت‌نام کرده‌اید؟ <a href="/login">وارد شوید</a></p>
+    </div>
+</body>
+</html>
