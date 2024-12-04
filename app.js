@@ -100,10 +100,6 @@ app.post('/register', async (req, res) => {
     }
 });
 
-//render index
-// app.get('/', (req, res) => {
-//     res.render('index', { error: null });
-// });
 app.get('/', async (req, res) => {      
     const products = await Product.find();
     try {
