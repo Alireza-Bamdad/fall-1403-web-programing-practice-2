@@ -101,8 +101,18 @@ app.post('/register', async (req, res) => {
 });
 
 //render index
-app.get('/', (req, res) => {
-    res.render('index', { error: null });
+// app.get('/', (req, res) => {
+//     res.render('index', { error: null });
+// });
+app.get('/', async (req, res) => {      
+    const products = await Product.find();
+    try {
+        const loggedIn = !!req.session.user;
+        res.render('index', { products, loggedIn, username: req.session.user.username });
+    } catch (error) {
+        res.render('index', { products, username: "لطفا وارد شوید" });
+    
+    }
 });
 
 //login routes
